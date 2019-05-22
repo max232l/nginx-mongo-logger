@@ -43,7 +43,7 @@
         if (err) {
           throw err;
         }
-        tail = spawn('tail', ['-f', pipe]);
+        tail = spawn('tail', ['-F', pipe]);
         log_regexp = /^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\ \-\ (.+)\ \[(.+)\]\ \"(\w+)\ (.+)\ HTTP\/(\d\.\d)\"\ (\d{3})\ (.+)\ \"(.+)\"\ \"(.+)\"$/;
         return carrier.carry(tail.stdout, function(line) {
           var attrs, matches, size, status_code;
