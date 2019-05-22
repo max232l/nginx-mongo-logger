@@ -9,9 +9,9 @@
   spawn = require('child_process').spawn;
   pipe = process.argv[2];
   mongo_collection = process.argv[3];
-  mongo_db = 'nginx_logs';
-  mongo_host = process.argv[4] ? process.argv[4] : "127.0.0.1";
-  mongo_port = process.argv[5] ? process.argv[5] : "27017";
+  mongo_db = process.argv[4] ? process.argv[4] : "nginx";
+  mongo_host = process.argv[5] ? process.argv[5] : "127.0.0.1";
+  mongo_port = process.argv[6] ? process.argv[6] : "27017";
   verbose = false;
   if (process.argv.length < 4) {
     script_name = console.log("# = Nginx MongoDB Logger Daemon");
